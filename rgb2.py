@@ -15,8 +15,13 @@ for x in range(0, (width - 1)):
     for y in range(0, (height - 1)):
         (b, g, r) = image[x,y]
         # if b > 220 & g > 220 & r > 220:
-        image[x, y] = (0, 255, 255)
+        image[x, y] = (0, 0, 255)
         #(b, g, r) = image[x, y]
-        
-cv2.imshow('image', image)
-cv2.waitKey(0)
+while True:
+    try:       
+        cv2.imshow('image', image)
+        cv2.waitKey(5000)
+    except KeyboardInterrupt:
+        cv2.destroyAllWindows()
+        raise SystemExit
+
